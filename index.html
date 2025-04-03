@@ -288,31 +288,29 @@
         
         <!-- Quality Metrics. -->
         <h3 class="title is-4">Generation Quality Metrics</h3>
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="content">
-              <h4 class="title is-5">Validity-Diversity Spectrum</h4>
-              <div class="figure-container metrics-figure">
-                <img src="./static/images/validity_diversity_original.png" alt="Validity-Diversity Spectrum">
-                <div class="figure-caption">Figure 3: Trade-off between question validity and semantic diversity across different LLM generators.</div>
-              </div>
-              <p>
-                Our analysis reveals an interplay between question validity and semantic diversity across different generator models. Models like o3 mini excel in validity but exhibit low diversity, while models like Qwen2.5 32B achieve high diversity with slightly lower validity. Some models like DeepSeek V3 demonstrate a strong balance, scoring well on both dimensions.
-              </p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="content">
-              <h4 class="title is-5">Citation Grounding</h4>
-              <div class="figure-container metrics-figure">
-                <img src="./static/images/citation_grounding_original.png" alt="Citation Grounding Performance">
-                <div class="figure-caption">Figure 4: Citation generation and validity performance across different models.</div>
-              </div>
-              <p>
-                Faithful attribution to source material via citations is crucial for verifying the grounding of generated answers. Our evaluation shows that leading models like Claude 3.7 Sonnet and several competitive open-weight models demonstrate strong citation generation capabilities, while models like Qwen2.5 32B achieve high citation validity at a fraction of the cost.
-              </p>
-            </div>
-          </div>
+        
+        <!-- Validity-Diversity Spectrum -->
+        <h4 class="title is-5">Validity-Diversity Spectrum</h4>
+        <div class="figure-container metrics-figure">
+          <img src="./static/images/validity_diversity_original.png" alt="Validity-Diversity Spectrum">
+          <div class="figure-caption">Figure 3: Trade-off between question validity and semantic diversity across different LLM generators.</div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our analysis reveals an interplay between question validity and semantic diversity across different generator models. Models like o3 mini excel in validity but exhibit low diversity, while models like Qwen2.5 32B achieve high diversity with slightly lower validity. Some models like DeepSeek V3 demonstrate a strong balance, scoring well on both dimensions.
+          </p>
+        </div>
+        
+        <!-- Citation Grounding -->
+        <h4 class="title is-5">Citation Grounding</h4>
+        <div class="figure-container metrics-figure">
+          <img src="./static/images/citation_grounding_original.png" alt="Citation Grounding Performance">
+          <div class="figure-caption">Figure 4: Citation generation and validity performance across different models.</div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Faithful attribution to source material via citations is crucial for verifying the grounding of generated answers. Our evaluation shows that leading models like Claude 3.7 Sonnet and several competitive open-weight models demonstrate strong citation generation capabilities, while models like Qwen2.5 32B achieve high citation validity at a fraction of the cost.
+          </p>
         </div>
         <!--/ Quality Metrics. -->
 
