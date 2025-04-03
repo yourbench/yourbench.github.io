@@ -69,27 +69,41 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title"><span class="yourbench">YourBench</span>: Easy Custom Evaluation Sets for Everyone</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://github.com/sumukhshashidhar">Sumuk Shashidhar</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="https://huggingface.co/clefourrier">Clémentine Fourrier</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://huggingface.co/">Alina Lozovskia</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://huggingface.co/thomwolf">Thomas Wolf</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=qZgVQFcAAAAJ">Gokhan Tur</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://siebelschool.illinois.edu/about/people/all-faculty/dilek">Dilek Hakkani-Tür</a><sup>2</sup>
-            </span>
+            <!-- First row of authors -->
+            <div class="author-row">
+              <span class="author-block">
+                <a href="https://github.com/sumukhshashidhar">Sumuk Shashidhar</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://huggingface.co/clefourrier">Clémentine Fourrier</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://huggingface.co/">Alina Lozovskia</a><sup>1</sup>
+              </span>
+            </div>
+            <!-- Second row of authors -->
+            <div class="author-row">
+              <span class="author-block">
+                <a href="https://huggingface.co/thomwolf">Thomas Wolf</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=qZgVQFcAAAAJ">Gokhan Tur</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://siebelschool.illinois.edu/about/people/all-faculty/dilek">Dilek Hakkani-Tür</a><sup>2</sup>
+              </span>
+            </div>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Hugging Face,</span>
             <span class="author-block"><sup>2</sup>University of Illinois at Urbana-Champaign</span>
+          </div>
+
+          <!-- Logos -->
+          <div class="logos-container has-text-centered">
+            <a href="https://huggingface.co/" target="_blank" class="logo-link">
+              <img src="./static/images/logos/hf-logo.svg" alt="Hugging Face" class="logo-image">
+            </a>
+            <a href="https://uiuc-conversational-ai-lab.github.io/" target="_blank" class="logo-link">
+              <img src="./static/images/logos/convai-logo.svg" alt="ConvAI Lab" class="logo-image">
+            </a>
           </div>
 
           <div class="column has-text-centered">
@@ -131,7 +145,18 @@
                       <i class="far fa-images"></i>
                   </span>
                   <span>Dataset</span>
-                  </a>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/yourbench/demo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play-circle"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
             </div>
 
           </div>
@@ -161,8 +186,9 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content-section">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
           <p>
             Evaluating large language models (LLMs) effectively remains a critical bottleneck, as traditional static benchmarks suffer from saturation and contamination, while human evaluations are costly and slow. This hinders timely or domain-specific assessment, crucial for real-world applications.
           </p>
@@ -189,7 +215,7 @@
     <div class="columns is-centered">
       <!-- Framework Overview. -->
       <div class="column">
-        <div class="content">
+        <div class="content-section">
           <h2 class="title is-3">Framework Overview</h2>
           <p>
             <span class="yourbench">YourBench</span> is a comprehensive framework for generating custom evaluation sets from any collection of documents. The pipeline consists of four main stages:
@@ -210,23 +236,25 @@
 
       <!-- Key Features. -->
       <div class="column">
-        <h2 class="title is-3">Key Features</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              <span class="yourbench">YourBench</span> addresses critical limitations in current LLM evaluation approaches:
-            </p>
-            <ul>
-              <li><strong>Dynamic Generation:</strong> Create fresh benchmarks on demand, reducing contamination risk</li>
-              <li><strong>Domain Specificity:</strong> Tailor evaluations to specialized fields and knowledge areas</li>
-              <li><strong>Temporal Relevance:</strong> Generate evaluations from recent documents to test up-to-date knowledge</li>
-              <li><strong>Cost Efficiency:</strong> Produce high-quality evaluations for under $15 in inference costs</li>
-              <li><strong>Automation:</strong> Eliminate the need for manual annotation while maintaining quality</li>
-              <li><strong>Verifiable Grounding:</strong> Ensure questions are answerable from source material through citation validation</li>
-            </ul>
-            <p>
-              The framework is designed to be accessible to researchers, practitioners, and organizations of all sizes, democratizing access to custom evaluation.
-            </p>
+        <div class="content-section">
+          <h2 class="title is-3">Key Features</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                <span class="yourbench">YourBench</span> addresses critical limitations in current LLM evaluation approaches:
+              </p>
+              <ul>
+                <li><strong>Dynamic Generation:</strong> Create fresh benchmarks on demand, reducing contamination risk</li>
+                <li><strong>Domain Specificity:</strong> Tailor evaluations to specialized fields and knowledge areas</li>
+                <li><strong>Temporal Relevance:</strong> Generate evaluations from recent documents to test up-to-date knowledge</li>
+                <li><strong>Cost Efficiency:</strong> Produce high-quality evaluations for under $15 in inference costs</li>
+                <li><strong>Automation:</strong> Eliminate the need for manual annotation while maintaining quality</li>
+                <li><strong>Verifiable Grounding:</strong> Ensure questions are answerable from source material through citation validation</li>
+              </ul>
+              <p>
+                The framework is designed to be accessible to researchers, practitioners, and organizations of all sizes, democratizing access to custom evaluation.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -236,11 +264,12 @@
     <!-- Validation Results. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Validation Results</h2>
+        <div class="content-section">
+          <h2 class="title is-3">Validation Results</h2>
 
-        <!-- MMLU Replication. -->
-        <h3 class="title is-4">MMLU Benchmark Replication</h3>
-        <div class="content has-text-justified">
+          <!-- MMLU Replication. -->
+          <h3 class="title is-4">MMLU Benchmark Replication</h3>
+          <div class="content has-text-justified">
           <p>
             We validated <span class="yourbench">YourBench</span> by replicating 7 diverse subsets of the MMLU benchmark. Using only a few relevant Wikipedia pages per domain as input, we generated new multiple-choice questions in the MMLU style. This process took less than 5 minutes and cost under $2 per domain, requiring no human annotation.
           </p>
@@ -312,8 +341,9 @@
     <!-- Applications. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Applications</h2>
-        <div class="content has-text-justified">
+        <div class="content-section">
+          <h2 class="title is-3">Applications</h2>
+          <div class="content has-text-justified">
           <p>
             <span class="yourbench">YourBench</span> is already being explored in several research initiatives:
           </p>
@@ -335,9 +365,10 @@
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{shashidhar2025yourbencheasycustomevaluation,
+  <div class="container is-max-desktop">
+    <div class="content-section">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{shashidhar2025yourbencheasycustomevaluation,
       title={YourBench: Easy Custom Evaluation Sets for Everyone}, 
       author={Sumuk Shashidhar and Clementine Fourier and Alina Lozovskia and Thomas Wolf and Gokhan Tur and Dilek Hakkani-Tür},
       year={2025},
@@ -346,6 +377,7 @@
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2504.01833}, 
 }</code></pre>
+    </div>
   </div>
 </section>
 
