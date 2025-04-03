@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="YourBench: Easy Custom Evaluation Sets for Everyone - A framework for automated generation of reliable, up-to-date, and domain-tailored benchmarks.">
+  <meta name="keywords" content="YourBench, LLM Evaluation, Benchmarks, NLP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YourBench: Easy Custom Evaluation Sets for Everyone</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://github.com/huggingface/yourbench">
+      <span class="icon">
+          <i class="fab fa-github"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Related Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://huggingface.co/datasets/sumuks/tempora">
+            Tempora-0325 Dataset
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2504.01833">
+            YourBench Paper
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span class="yourbench">YourBench</span>: Easy Custom Evaluation Sets for Everyone</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/sumukhshashidhar">Sumuk Shashidhar</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://huggingface.co/clefourrier">Clémentine Fourrier</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://huggingface.co/">Alina Lozovskia</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://huggingface.co/thomwolf">Thomas Wolf</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=qZgVQFcAAAAJ">Gokhan Tur</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://siebelschool.illinois.edu/about/people/all-faculty/dilek">Dilek Hakkani-Tür</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Hugging Face,</span>
+            <span class="author-block"><sup>2</sup>University of Illinois at Urbana-Champaign</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2504.01833"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.01833"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/huggingface/yourbench"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/sumuks/tempora"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/mmlu_results.svg" alt="YourBench MMLU Results" width="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="yourbench">YourBench</span> automatically generates reliable, domain-specific evaluation sets directly from source documents.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Evaluating large language models (LLMs) effectively remains a critical bottleneck, as traditional static benchmarks suffer from saturation and contamination, while human evaluations are costly and slow. This hinders timely or domain-specific assessment, crucial for real-world applications.
+          </p>
+          <p>
+            We introduce <span class="yourbench">YourBench</span>, a novel, open-source framework that addresses these limitations by enabling dynamic, automated generation of reliable, up-to-date, and domain-tailored benchmarks cheaply and without manual annotation, directly from user-provided documents. We demonstrate its efficacy by replicating 7 diverse MMLU subsets using minimal source text, achieving this for under $15 in total inference costs while perfectly preserving the relative model performance rankings (Spearman ρ = 1) observed on the original benchmark.
+          </p>
+          <p>
+            To ensure that YourBench generates data grounded in provided input instead of relying on posterior parametric knowledge in models, we also introduce <span class="highlight">Tempora-0325</span>, a novel dataset of over 7K diverse documents, published exclusively after March 2025. Our comprehensive analysis spans 26 SoTA models from 7 major families across varying scales (3-671B parameters) to validate the quality of generated evaluations through rigorous algorithmic checks (e.g., citation grounding) and human assessments.
+          </p>
+          <p>
+            We release the YourBench library, the <span class="highlight">Tempora-0325</span> dataset, 150k+ question answer pairs based on Tempora and all evaluation and inference traces to facilitate reproducible research and empower the community to generate bespoke benchmarks on demand, fostering more relevant and trustworthy LLM evaluation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <!-- Framework Overview. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Framework Overview</h2>
+          <p>
+            <span class="yourbench">YourBench</span> is a comprehensive framework for generating custom evaluation sets from any collection of documents. The pipeline consists of four main stages:
+          </p>
+          <img src="./static/images/framework.svg" alt="YourBench Framework" width="100%">
+          <ol>
+            <li><strong>Document Preprocessing:</strong> Standardizes diverse document formats and handles multimodal content</li>
+            <li><strong>Question Generation:</strong> Uses LLM ensembles to create diverse, contextually-grounded questions</li>
+            <li><strong>Quality Filtering:</strong> Ensures questions are valid and verifiably answerable from source material</li>
+            <li><strong>Evaluation:</strong> Provides tools for assessing model performance on the generated benchmark</li>
+          </ol>
+        </div>
+      </div>
+      <!--/ Framework Overview. -->
+
+      <!-- Key Features. -->
+      <div class="column">
+        <h2 class="title is-3">Key Features</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              <span class="yourbench">YourBench</span> addresses critical limitations in current LLM evaluation approaches:
+            </p>
+            <ul>
+              <li><strong>Dynamic Generation:</strong> Create fresh benchmarks on demand, reducing contamination risk</li>
+              <li><strong>Domain Specificity:</strong> Tailor evaluations to specialized fields and knowledge areas</li>
+              <li><strong>Temporal Relevance:</strong> Generate evaluations from recent documents to test up-to-date knowledge</li>
+              <li><strong>Cost Efficiency:</strong> Produce high-quality evaluations for under $15 in inference costs</li>
+              <li><strong>Automation:</strong> Eliminate the need for manual annotation while maintaining quality</li>
+              <li><strong>Verifiable Grounding:</strong> Ensure questions are answerable from source material through citation validation</li>
+            </ul>
+            <p>
+              The framework is designed to be accessible to researchers, practitioners, and organizations of all sizes, democratizing access to custom evaluation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Features. -->
+
+    <!-- Validation Results. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Validation Results</h2>
+
+        <!-- MMLU Replication. -->
+        <h3 class="title is-4">MMLU Benchmark Replication</h3>
+        <div class="content has-text-justified">
+          <p>
+            We validated <span class="yourbench">YourBench</span> by replicating 7 diverse subsets of the MMLU benchmark. Using only a few relevant Wikipedia pages per domain as input, we generated new multiple-choice questions in the MMLU style. This process took less than 5 minutes and cost under $2 per domain, requiring no human annotation.
+          </p>
+          <p>
+            The results demonstrated two key findings:
+          </p>
+          <ol>
+            <li>Perfect preservation of relative model performance rankings compared to the original MMLU (Spearman ρ = 1.00)</li>
+            <li>Consistently more challenging questions (lower absolute scores), yielding a contamination-resistant evaluation</li>
+          </ol>
+          <p>
+            This confirms that <span class="yourbench">YourBench</span> can reliably generate evaluations that maintain the discriminative power of established benchmarks while offering fresh, uncontaminated test items.
+          </p>
+        </div>
+        <!--/ MMLU Replication. -->
+
+        <!-- Tempora Dataset. -->
+        <h3 class="title is-4">Tempora-0325 Dataset</h3>
+        <div class="content has-text-justified">
+          <p>
+            To support robust evaluation, particularly concerning temporal knowledge, we release <span class="highlight">Tempora-0325</span>, a dataset comprising 7,368 documents published exclusively after March 1, 2025. This dataset is designed to:
+          </p>
+          <ul>
+            <li>Mitigate contamination by using content published after model training cutoffs</li>
+            <li>Force reliance on provided context rather than parametric knowledge</li>
+            <li>Span diverse domains including government, corporate, legal, medical, sports, news, and blogs</li>
+            <li>Provide both an unbalanced full corpus reflecting real-world distributions and a balanced subset for controlled analysis</li>
+          </ul>
+          <p>
+            <span class="highlight">Tempora-0325</span> is publicly available and can be used with <span class="yourbench">YourBench</span> to create challenging, up-to-date evaluations.
+          </p>
+        </div>
+        <!--/ Tempora Dataset. -->
+
+      </div>
+    </div>
+    <!--/ Validation Results. -->
+
+    <!-- Applications. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Applications</h2>
+        <div class="content has-text-justified">
+          <p>
+            <span class="yourbench">YourBench</span> is already being explored in several research initiatives:
+          </p>
+          <ul>
+            <li><strong>Domain-Specific Knowledge Assessment:</strong> Evaluating LLMs on specialized, proprietary knowledge in fields like agriculture</li>
+            <li><strong>Personalized Education:</strong> Generating tailored assessment questions based on individual student learning profiles</li>
+            <li><strong>Advanced RAG Training Data:</strong> Creating challenging training corpora for retrieval-augmented generation systems</li>
+          </ul>
+          <p>
+            By providing a robust, scalable, and fast automated approach, <span class="yourbench">YourBench</span> facilitates more nuanced, timely, and targeted assessments of LLM capabilities at a low cost, making the process accessible to most researchers and practitioners.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Applications. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{shashidhar2025yourbencheasycustomevaluation,
+      title={YourBench: Easy Custom Evaluation Sets for Everyone}, 
+      author={Sumuk Shashidhar and Clementine Fourier and Alina Lozovskia and Thomas Wolf and Gokhan Tur and Dilek Hakkani-Tür},
+      year={2025},
+      eprint={2504.01833},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2504.01833}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/huggingface/yourbench">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a href="https://github.com/yourbench/yourbench.github.io">source code</a> of this website, we just ask that you link back to this page in the footer. Please remember to remove the analytics code included in the header of the website which you do not want on your website.
+          </p>
+          <p>
+            Website template based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
