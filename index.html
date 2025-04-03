@@ -144,7 +144,10 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/mmlu_results_real.png" alt="YourBench MMLU Results" width="100%">
+      <div class="figure-container mmlu-results-figure">
+        <img src="./static/images/mmlu_results_real.png" alt="YourBench MMLU Results">
+        <div class="figure-caption">Figure 1: YourBench-generated MMLU questions maintain the same model ranking as the original benchmark while being more challenging.</div>
+      </div>
       <h2 class="subtitle has-text-centered">
         <span class="yourbench">YourBench</span> automatically generates reliable, domain-specific evaluation sets directly from source documents.
       </h2>
@@ -191,7 +194,10 @@
           <p>
             <span class="yourbench">YourBench</span> is a comprehensive framework for generating custom evaluation sets from any collection of documents. The pipeline consists of four main stages:
           </p>
-          <img src="./static/images/framework_real.png" alt="YourBench Framework" width="100%">
+          <div class="figure-container framework-figure">
+            <img src="./static/images/framework_real.png" alt="YourBench Framework">
+            <div class="figure-caption">Figure 2: The YourBench pipeline transforms source documents into high-quality evaluation sets through four key stages.</div>
+          </div>
           <ol>
             <li><strong>Document Preprocessing:</strong> Standardizes diverse document formats and handles multimodal content</li>
             <li><strong>Question Generation:</strong> Uses LLM ensembles to create diverse, contextually-grounded questions</li>
@@ -257,7 +263,10 @@
           <div class="column">
             <div class="content">
               <h4 class="title is-5">Validity-Diversity Spectrum</h4>
-              <img src="./static/images/validity_diversity.png" alt="Validity-Diversity Spectrum" width="100%">
+              <div class="figure-container metrics-figure">
+                <img src="./static/images/validity_diversity.png" alt="Validity-Diversity Spectrum">
+                <div class="figure-caption">Figure 3: Trade-off between question validity and semantic diversity across different LLM generators.</div>
+              </div>
               <p>
                 Our analysis reveals an interplay between question validity and semantic diversity across different generator models. Models like o3 mini excel in validity but exhibit low diversity, while models like Qwen2.5 32B achieve high diversity with slightly lower validity. Some models like DeepSeek V3 demonstrate a strong balance, scoring well on both dimensions.
               </p>
@@ -266,7 +275,10 @@
           <div class="column">
             <div class="content">
               <h4 class="title is-5">Citation Grounding</h4>
-              <img src="./static/images/citation_grounding.png" alt="Citation Grounding Performance" width="100%">
+              <div class="figure-container metrics-figure">
+                <img src="./static/images/citation_grounding.png" alt="Citation Grounding Performance">
+                <div class="figure-caption">Figure 4: Citation generation and validity performance across different models.</div>
+              </div>
               <p>
                 Faithful attribution to source material via citations is crucial for verifying the grounding of generated answers. Our evaluation shows that leading models like Claude 3.7 Sonnet and several competitive open-weight models demonstrate strong citation generation capabilities, while models like Qwen2.5 32B achieve high citation validity at a fraction of the cost.
               </p>
